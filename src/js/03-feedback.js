@@ -2,6 +2,7 @@ import throttle from 'lodash.throttle';
 
 const form = document.querySelector('.feedback-form');
 const formData = {};
+let savedData = {};
 
 returnForm();
 form.addEventListener('submit', handleSubmit);
@@ -14,7 +15,7 @@ function saveFormData(e) {
 
 function handleSubmit(evt) {
   evt.preventDefault();
-  let savedData = localStorage.getItem('feedback-form-state');
+  savedData = localStorage.getItem('feedback-form-state');
   console.log(savedData);
 
   evt.currentTarget.reset();
