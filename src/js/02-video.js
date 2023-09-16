@@ -9,15 +9,4 @@ const throttleTime = function (data) {
 };
 player.on('timeupdate', throttle(throttleTime, 1000));
 
-player
-  .setCurrentTime(savedTime)
-  .then(function (savedTime) {})
-  .catch(function (error) {
-    switch (error.name) {
-      case 'RangeError':
-        break;
-
-      default:
-        break;
-    }
-  });
+player.setCurrentTime(savedTime || 0);
