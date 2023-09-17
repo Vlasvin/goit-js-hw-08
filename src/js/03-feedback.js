@@ -27,7 +27,7 @@ function handleSubmit(evt) {
   if ((form.elements.email.value && form.elements.message.value) === '') {
     return alert('Please fill in all the fields!');
   } else {
-    savedData = localStorage.getItem('feedback-form-state');
+    const savedData = localStorage.getItem('feedback-form-state');
     console.log(savedData);
 
     evt.currentTarget.reset();
